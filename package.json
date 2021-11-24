@@ -1,0 +1,33 @@
+{
+    "name": "prices-tf",
+    "version": "1.0.0",
+    "description": "API Wrapper for v2 prices.tf",
+    "main": "dist/index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "build": "npx tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viggojonasson/node-prices-tf.git"
+    },
+    "keywords": [
+        "tf2",
+        "prices.tf",
+        "backpack.tf"
+    ],
+    "author": "Viggo Jonasson",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/viggojonasson/node-prices-tf/issues"
+    },
+    "homepage": "https://github.com/viggojonasson/node-prices-tf#readme",
+    "dependencies": {
+        "axios": "^0.24.0"
+    },
+    "devDependencies": {
+        "typescript": "^4.5.2"
+    }
+}
