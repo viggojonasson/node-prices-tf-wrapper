@@ -40,10 +40,10 @@ api.getAccessToken();
 
 // All endpoint methods allows some options to be provided
 const requestOptions: RequestOptions = {
-  maxRetries: 3 // Max amount of attempts made on each request before it forfeits.
-  waitTime: 10 * 1000 // Time (ms) to wait before retrying again.
-  axiosTimeout: 10 * 1000 // The timeout property specified to the axios request.
-  skipTokenRegeneration: false // Whether or not to regenerate a new token, if this is true you will have to specify one yourself using the api.setToken method.
+  maxRetries: 3, // Max amount of attempts made on each request before it forfeits.
+  waitTime: 10 * 1000, // Time (ms) to wait before retrying again.
+  axiosTimeout: 10 * 1000, // The timeout property specified to the axios request.
+  skipTokenRegeneration: false, // Whether or not to regenerate a new token, if this is true you will have to specify one yourself using the api.setToken method.
 };
 
 ```
