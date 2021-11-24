@@ -1,5 +1,5 @@
 {
-    "name": "prices-tf",
+    "name": "prices-tf-wrapper",
     "version": "1.0.0",
     "description": "API Wrapper for v2 prices.tf",
     "main": "dist/index.js",
