@@ -1,7 +1,7 @@
 # node-prices-tf-wrapper
 API Wrapper for v2 prices.tf.
 
-## [API Documentation](https://api2.prices.tf)
+## [API Documentation](https://api2.prices.tf/docs)
 
 ## Installation
 ```
