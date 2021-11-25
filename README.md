@@ -12,7 +12,7 @@ npm i prices-tf-wrapper --save
 The module handles access token re-generation for you. All you have to do is call the methods.
 
 ```ts
-import PricesTF, {RequestOptions} from "prices-tf-wrapper";
+import PricesTF, {RequestOptions, parsePrice} from "prices-tf-wrapper";
 
 const api = new PricesTF();
 
@@ -46,4 +46,8 @@ const requestOptions: RequestOptions = {
   skipTokenRegeneration: false, // Whether or not to regenerate a new token, if this is true you will have to specify one yourself using the api.setToken method.
 };
 
+// Parse a prices.tf price into a currency object.
+api.getPrice('5021;6').then((res) => {
+  console.log(parsePrice(res));
+})
 ```
