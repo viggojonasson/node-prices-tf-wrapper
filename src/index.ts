@@ -139,7 +139,7 @@ class PricesTF {
             return data;
         } catch (err: any) {
             if (err.response && err.response.status === 401) {
-                if (options?.skipTokenRegeneration) throw err;
+                if (options?.skipTokenRegeneration === true) throw err;
 
                 await this.getAccessToken();
 
