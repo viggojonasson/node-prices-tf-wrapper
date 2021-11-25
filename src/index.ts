@@ -1,5 +1,10 @@
 import axios, { Method } from 'axios';
 
+type Currency = {
+    metal: number;
+    keys: number;
+};
+
 export type PossibleParams = {
     page?: number;
     limit?: number;
@@ -163,6 +168,44 @@ class PricesTF {
             );
         }
     }
+}
+
+export function parsePrice(price: ItemPrice): {
+    sell: Currency;
+    buy: Currency;
+} {
+    return {
+        sell: {
+            keys: price.sellKeys || 0,
+            metal: toMetal(price.sellHalfScrap / 2) || 0,
+        },
+        buy: {
+            keys: price.buyKeys || 0,
+            metal: toMetal(price.buyHalfScrap / 2) || 0,
+        },
+    };
+}
+
+// From tf2-currency
+function toMetal(scrap: number): number {
+    let refined = scrap / 9;
+    // Truncate it to remove repeating decimals  (10 scrap / 9 scrap/refined = 1.1111...)
+    return (refined = truncateCurrency(refined));
+}
+
+function truncateCurrency(num: number): number {
+    const decimals = 2;
+    const factor = Math.pow(10, decimals);
+    return roundCurrency(num * factor) / factor;
+}
+
+function roundCurrency(num: number): number {
+    const isPositive = num >= 0;
+
+    const rounding = num + 0.001 > Math.ceil(num) ? Math.round : Math.floor;
+    const rounded = rounding(Math.abs(num));
+
+    return isPositive ? rounded : -rounded;
 }
 
 function delayPromise(ms: number): Promise<void> {
