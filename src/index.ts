@@ -135,6 +135,7 @@ class PricesTF {
                     : {
                           Authorization: 'Bearer ' + this.accessToken,
                       },
+                params,
             });
             return data;
         } catch (err: any) {
